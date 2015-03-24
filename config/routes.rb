@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :books
+
   # root "high_voltage/pages#show", id: 'home'
   root "welcome#index"
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
