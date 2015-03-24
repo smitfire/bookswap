@@ -1,11 +1,12 @@
 source "https://rubygems.org"
 
-ruby "2.1.5"
+ruby "2.2.1"
 
 gem "airbrake"
 gem "bourbon", "~> 3.2.1"
-gem "coffee-rails"
+# gem "coffee-rails"
 gem "delayed_job_active_record"
+gem "devise"
 gem "email_validator"
 gem "flutie"
 gem "high_voltage"
@@ -14,10 +15,16 @@ gem "jquery-rails"
 gem "neat", "~> 1.5.1"
 gem "newrelic_rpm"
 gem "normalize-rails", "~> 3.0.0"
+gem "omniauth"
+gem "omniauth-facebook"
+gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin-oauth2'
+gem 'omniauth-twitter'
 gem "pg"
 gem "rack-timeout"
 gem "rails", "4.1.8"
 gem "recipient_interceptor"
+gem "refills"
 gem "sass-rails", "~> 4.0.3"
 gem "simple_form"
 gem "title"
@@ -28,6 +35,7 @@ group :development do
   gem "bundler-audit"
   gem "spring"
   gem "spring-commands-rspec"
+  gem "web-console"
 end
 
 group :development, :test do
