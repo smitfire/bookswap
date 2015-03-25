@@ -1,13 +1,14 @@
 class CreateBooks < ActiveRecord::Migration
   def change
     create_table :books do |t|
-      t.string :title
-      t.integer :price
-      t.text :summary
       t.string :author
-      t.refernces :user
+      t.string :title
+      t.text :summary
+      t.integer :user_id, index: true
+      t.attachment :cover
 
       t.timestamps
     end
+
   end
 end

@@ -3,13 +3,17 @@ source "https://rubygems.org"
 ruby "2.2.1"
 
 gem "airbrake"
+gem "arel"
+# gem 'acts_as_votable', '~> 0.10.0'
 gem "bourbon", "~> 3.2.1"
+gem "bootstrap-sass"
 # gem "coffee-rails"
 gem "delayed_job_active_record"
 gem "devise"
 gem "email_validator"
 gem "faker"
 gem "flutie"
+gem "geocoder"
 gem "high_voltage"
 gem "i18n-tasks"
 gem "jquery-rails"
@@ -22,8 +26,11 @@ gem "omniauth-facebook"
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-twitter'
+gem "paperclip", "~> 4.2"
+# gem "paranoia", "~> 2.0"
 gem "pg"
 gem "rack-timeout"
+gem 'ransack'
 gem "rails", "4.1.8"
 gem "recipient_interceptor"
 gem "refills"
