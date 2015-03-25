@@ -20,6 +20,8 @@ class User < ActiveRecord::Base
 
   has_many :disliked_books, -> { uniq }, through: :ungiven_likes, source: :book, inverse_of: :dislikers
 
+  has_many :received_votes, through: :owned_books, source: :votes
+
   # GEOCODER
   geocoded_by :full_street_address   # can also be an IP address
   after_validation :geocode
@@ -28,6 +30,9 @@ class User < ActiveRecord::Base
   scope :people_in_range, -> (user) { where("id != ?", user.id ).near( [ user.latitude, user.longitude ], user.range ) }
   scope :all_likers, -> { joins(:votes).where('votes.liked = ?', true) }
   scope :all_voters, -> { joins(:votes).where('votes.user_id != ?', nil ) }
+
+  # Validations
+
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

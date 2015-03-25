@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 20150325101623) do
     t.datetime "updated_at"
   end
 
-  add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
-
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false

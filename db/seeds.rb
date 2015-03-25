@@ -21,8 +21,10 @@ yay = [true, false]
   offset_b = rand(User.count)
   u= User.offset(offset_u).first
   b= Book.offset(offset_b).first
-  u.voted_books << b
-  v = u.votes.last
-  v.liked = yay.sample
-  v.save
+  if u.voted_books.exists?(b)
+    u.voted_books << b
+    v = u.votes.last
+    v.liked = yay.sample
+    v.save
+  end
 end
