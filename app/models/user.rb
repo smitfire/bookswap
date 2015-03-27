@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
   end
 
   def bookstack
-    users_in_range.flat_map{ |user| user.owned_books }
+    User.people_in_range(self).flat_map{ |user| user.owned_books }
   end
 
 
