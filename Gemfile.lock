@@ -214,6 +214,8 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.8)
       sprockets-rails (~> 2.0)
+    rails-footnotes (4.1.7)
+      rails (>= 3.2)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -262,9 +264,6 @@ GEM
       sprockets-rails (~> 2.0)
     shoulda-matchers (2.8.0)
       activesupport (>= 3.0.0)
-    simple_form (3.1.0)
-      actionpack (~> 4.0)
-      activemodel (~> 4.0)
     slop (3.6.0)
     spring (1.3.3)
     spring-commands-rspec (1.0.4)
@@ -352,6 +351,7 @@ DEPENDENCIES
   pry-rails
   rack-timeout
   rails (= 4.1.8)
+  rails-footnotes (~> 4.0)
   rails_12factor
   ransack
   recipient_interceptor
@@ -359,7 +359,6 @@ DEPENDENCIES
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)
   shoulda-matchers
-  simple_form
   spring
   spring-commands-rspec
   timecop

@@ -3,6 +3,8 @@ class Book < ActiveRecord::Base
   has_attached_file :cover, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_file_name :cover, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
 
+  # belongs_to :user
+
   belongs_to :owner, class_name: "User", foreign_key: "user_id", inverse_of: :owned_books
 
   has_many :votes, -> { includes :user }, dependent: :destroy
@@ -27,6 +29,12 @@ class Book < ActiveRecord::Base
 
 
   def self.unviewed_books(user_id)
-    Book.where.not(id: User.find(user_id).voted_books.ids )
+    Book.where.not(id: User.find(user_id).voted_books.ids, user_id: user_id )
   end
+
+
+  def location
+    [owner.longitude, owner.latitude]
+  end
+
 end

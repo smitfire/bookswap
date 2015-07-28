@@ -35,7 +35,7 @@ gem "rails", "4.1.8"
 gem "recipient_interceptor"
 gem "refills"
 gem "sass-rails", "~> 4.0.3"
-gem "simple_form"
+# gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
@@ -45,6 +45,7 @@ group :development do
   gem "spring"
   gem "spring-commands-rspec"
   gem "web-console"
+  gem 'rails-footnotes', '~> 4.0'
 end
 
 group :development, :test do

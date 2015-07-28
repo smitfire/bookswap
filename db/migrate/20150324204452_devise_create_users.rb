@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :provider
       t.attachment :avatar
       t.integer :range
+
       t.float :latitude
       t.float :longitude
 

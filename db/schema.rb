@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20150325101623) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "votes", force: true do |t|
-    t.boolean  "liked",      default: false, null: false
+    t.boolean  "liked"
     t.integer  "user_id"
     t.integer  "book_id"
     t.datetime "created_at"
